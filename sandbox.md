@@ -116,15 +116,15 @@
    
     Example: `$get rank Testing` gets the rank of the player `"Testing"`
    
-- `$map` - Used to modify the map __[AO only]__
+- `$map` - Used to modify the map __[Mixed rank]__
 
   Has the following subcommands:
   
-  - `export` - Used to export the map as a string
+  - `export` - Used to export the map as a string __[AC, AS and AO only]__
  
     Example: `$map export` copies the map string to the clipboard
 
-  - `import` - Used to import a map from a string
+  - `import` - Used to import a map from a string __[AO only]__
  
     Takes in the following argument:
 
