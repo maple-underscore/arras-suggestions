@@ -148,6 +148,9 @@
     - `maximumTime` - Maximum time between boss spawns
 
     Optional time extensions (default is in seconds): [t, ms, s, m, h] where t is ticks.
+
+    Delay is capped at `1` millisecond minimum and `24` hours or `1` day maximum
+    [`1440` minutes, `86400` seconds, `2592000` ticks, `86400000` milliseconds]
    
     Example: `$boss interval 10m 15m` sets a boss to spawn between every `10` and `15` minutes
 
