@@ -136,6 +136,38 @@
    
     Example: `map import {mapData}` imports the map.
 
+- `$boss` - Used to set boss properties __[AO only]__
+
+  Has the following subcommands:
+
+  - `interval` - Used to set boss spawn interval
+ 
+    Takes the following arguments:
+
+    - `minimumTime` - Minimum time between boss spawns
+    - `maximumTime` - Maximum time between boss spawns
+
+    Optional time extensions (default is in seconds): [t, ms, s, m, h] where t is ticks.
+   
+    Example: `$boss interval 10m 15m` sets a boss to spawn between every `10` and `15` minutes
+
+  - `level` - Used to set boss difficulty
+ 
+    Takes the following argument:
+
+    - `types` - A list of possible boss types from
+      [elite, nester, terrestrial, celestial, eternal]
+
+    Example: `$boss level [elite, nester]` only allows Elites and Nesters to spawn
+
+  - `spawning` - Used to set boss spawning toggle
+ 
+    Takes the following argument:
+
+    - `toggle` - A boolean to enable or disable boss spawning (`True` or `False`)
+   
+    Example: `$boss spawning False` disables boss spawning
+
 ## Details
 
 > [!NOTE]
