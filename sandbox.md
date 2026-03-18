@@ -1,8 +1,6 @@
 # Command improvements!!!
 
 - `$rank` - Assigns and edits ranks __[AS and AO only]__
-
-  Ranks are indicated with their specific integer in player list. Hovering over the integer will display the rank name, permissions and attributes.
   
   Has the following subcommands:
 
@@ -131,3 +129,10 @@
     - `mapData` - A string containing the data for the map to import.
    
     Example: `map import {mapData}` imports the map.
+
+## Details
+
+> [!NOTE]
+> Ranks are indicated with their specific integer in player list. Hovering over the integer will display the rank name, permissions and attributes.
+>
+> Multiple Player IDs may be specified using a list (e.g. `[12345, 67890]`)
