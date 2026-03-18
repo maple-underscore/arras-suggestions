@@ -1,8 +1,17 @@
 # Command improvements!!!
 
-- `$rank`
+- `$rank` - Assigns and edits ranks __[AS and AO only]__
   
   Has the following subcommands:
+
+  - `setAttr` - Sets a specific property of a player
+ 
+    Takes in the following arguments:
+
+    - `id` - Player ID
+    - `data` - The attributes to modify for the player (e.g. `attr=[Attributes]`)
+   
+    Example: `$rank setAttr 12345 perm=[build]` sets the player with ID `12345` to be able to build with no other perms. To add or remove a property use `+` or `-` in front of the list
   
   - `set` - Sets a rank for a player
     
@@ -13,7 +22,7 @@
     - `attr` - Attributes to assign to the player
     - `name` - (optional) Gives a name to the role
    
-    Example: `$rank set 12345 [build, spec] [as, ao] Builder` to create a rank which can only build and become spectator, and can be assigned by AS and AO.
+    Example: `$rank set 12345 [build, spec] [as, ao] Builder` to create a rank which can only build and become spectator, can be assigned by AS and AO and assigns that rank to the player with ID `12345`
       
   - `list` - Lists all available ranks
  
@@ -21,7 +30,7 @@
     
   - `get` - Gets permissions and attributes of a rank
     
-    Takes in the following arguments:
+    Takes in the following argument:
     
     - `name` - Name of the rank to get
    
@@ -29,19 +38,27 @@
    
   - `del` - Deletes a certain rank
  
-    Takes in the following arguments:
+    Takes in the following argument:
    
     - `name` - Name of the rank to delete
    
     Example: `$rank del Builder`
 
-- `$arena`
+- `$arena` - Modifies properties of the arena __[AO only]__
 
   Has the following subcommands:
+
+  - `broadcast` - Broadcasts a global message
+ 
+    Takes in the following argument:
+
+    - `message` - A string containing the message content
+   
+    Example: `$arena broadcast Test message here`
  
   - `spawnpoint` - Sets spawnpoint
  
-    Takes in the following arguments:
+    Takes in the following argument:
    
     - `position` - Position to spawn at
    
@@ -55,15 +72,10 @@
     - `corner2` - A tuple defining the second corner of the spawn region
    
     Example: `$arena spawnregion (10, 10) (-10, -10)` sets the spawn region to a `20`x`20` unit square around center of the arena
-   
-> [!NOTE]
-> Corners must be in __TUPLE__ form!
->
-> This means a format like `(0, 0)` with parentheses enclosing the `x` and `y` values.
     
   - `team` - Sets number of teams
 
-    Takes in the following arguments:
+    Takes in the following argument:
 
     - `teamAmount` - A number between `1`-`20` that defines the number of teams in the arena. Set to `0` for FFA
 
@@ -78,18 +90,42 @@
    
     Example: `$arena size 100 100` creates an arena with dimensions `100`x`100`
 
+  - `polygon` - Sets the polygon limit
 
+    Takes in the following argument:
 
+    - `limit` - An integer that represents the maximum number of polygons allowed at any time
+   
+    Example: `$arena polygon 1000` sets polygon cap to `1000`
 
+- `$get` - Gets a specific data attribute of the specified player(s) __[Available to all players]__
 
+  Has the following subcommands:
 
+  - `id` - Used to get the iD of the specified player(s)
 
+   Example: `$get id Testing` gets the Player ID of the player `"Testing"`
+  
+  - `rank` - Used to get the rank of the specified player(s)
+ 
+    Both of these take the following argument:
 
+    - `namespace` - Either a player name as a string (e.g. `"Testing"`), a list (e.g. `["Testing", "d2"]`) or `all` to get all players.
+   
+    Example: `$get rank Testing` gets the rank of the player `"Testing"`
+   
+- `$map` - Used to modify the map __[AO only]__
 
+  Has the following subcommands:
+  
+  - `export` - Used to export the map as a string
+ 
+    Example: `$map export` copies the map string to the clipboard
 
+  - `import` - Used to import a map from a string
+ 
+    Takes in the following argument:
 
-
-
-
-
-
+    - `mapData` - A string containing the data for the map to import.
+   
+    Example: `map import {mapData}` imports the map.
