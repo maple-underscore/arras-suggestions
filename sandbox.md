@@ -11,7 +11,9 @@
     - `id` - Player ID
     - `data` - The attributes to modify for the player (e.g. `attr=[Attributes]`)
    
-    Example: `$rank setAttr 12345 perm=[build]` sets the player with ID `12345` to be able to build with no other perms. To add or remove a property use `+` or `-` in front of the list
+    Example: `$rank setAttr 12345 perm=[build]` sets the player
+    with ID `12345` to be able to build with no other perms.
+    To add or remove a property use `+` or `-` in front of the list
   
   - `set` - Sets a rank for a player
     
@@ -22,7 +24,9 @@
     - `attr` - Attributes to assign to the player
     - `name` - (optional) Gives a name to the role
    
-    Example: `$rank set 12345 [build, spec] [as, ao] Builder` to create a rank which can only build and become spectator, can be assigned by AS and AO and assigns that rank to the player with ID `12345`
+    Example: `$rank set 12345 [build, spec] [as, ao] Builder`
+    to create a rank which can only build and become spectator,
+    can be assigned by AS and AO and assigns that rank to the player with ID `12345`
       
   - `list` - Lists all available ranks
  
@@ -54,7 +58,7 @@
 
     - `message` - A string containing the message content
    
-    Example: `$arena broadcast Test message here`
+    Example: `$arena broadcast "Test message here"`
  
   - `spawnpoint` - Sets spawnpoint
  
@@ -71,7 +75,8 @@
     - `corner1` - A tuple defining one corner of the spawn region
     - `corner2` - A tuple defining the second corner of the spawn region
    
-    Example: `$arena spawnregion (10, 10) (-10, -10)` sets the spawn region to a `20`x`20` unit square around center of the arena
+    Example: `$arena spawnregion (10, 10) (-10, -10)` sets the spawn region
+    to a `20`x`20` unit square around center of the arena
     
   - `team` - Sets number of teams
 
@@ -104,15 +109,16 @@
 
   - `id` - Used to get the iD of the specified player(s)
 
-   Example: `$get id Testing` gets the Player ID of the player `"Testing"`
+   Example: `$get id "Testing"` gets the Player ID of the player `"Testing"`
   
   - `rank` - Used to get the rank of the specified player(s)
  
     Both of these take the following argument:
 
-    - `namespace` - Either a player name as a string (e.g. `"Testing"`), a list (e.g. `["Testing", "d2"]`) or `all` to get all players.
+    - `namespace` - Either a player name as a string (e.g. `"Testing"`),
+    - a list (e.g. `["Testing", "d2"]`) or `all` to get all players.
    
-    Example: `$get rank Testing` gets the rank of the player `"Testing"`
+    Example: `$get rank "Testing"` gets the rank of the player `"Testing"`
    
 - `$map` - Used to modify the map __[Mixed rank]__
 
@@ -133,6 +139,13 @@
 ## Details
 
 > [!NOTE]
-> Ranks are indicated with their specific integer in player list. Hovering over the integer will display the rank name, permissions and attributes.
+> Ranks are indicated with their specific integer in player list.
+> Hovering over the integer will display the rank name, permissions and attributes.
 >
 > Multiple Player IDs may be specified using a list (e.g. `[12345, 67890]`)
+>
+> If you have quotes or special characters in any arguments,
+> use a reverse solidus or backslash (`\`) to escape the special character(s).
+>
+> You may use the `$` character to treat a nested command's output as an argument in the parent command.
+> e.g. `$get rank $get all$` will return the rank of all players.
