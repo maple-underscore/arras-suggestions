@@ -147,6 +147,8 @@
     - `minimumTime` - Minimum time between boss spawns
     - `maximumTime` - Maximum time between boss spawns
 
+    Using only one argument sets the boss time to exactly that argument. Otherwise, the boss time is randomized between the set values to the nearest millisecond.
+
     Optional time extensions (default is in seconds): [t, ms, s, m, h] where t is ticks.
 
     Delay is capped at `1` millisecond minimum and `24` hours or `1` day maximum
