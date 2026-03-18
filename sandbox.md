@@ -1,6 +1,8 @@
 # Command improvements!!!
 
 - `$rank` - Assigns and edits ranks __[AS and AO only]__
+
+  Ranks are indicated with their specific integer in player list. Hovering over the integer will display the rank name, permissions and attributes.
   
   Has the following subcommands:
 
@@ -85,8 +87,8 @@
  
     Takes in the following arguments:
 
-    - `xSize` - A number between `2`-`1024` that defines the width of the arena
-    - `ySize` - A number between `2`-`1024` that defines the height of the arena
+    - `xSize` - A number between `2`-`8192` that defines the width of the arena
+    - `ySize` - A number between `2`-`8192` that defines the height of the arena
    
     Example: `$arena size 100 100` creates an arena with dimensions `100`x`100`
 
