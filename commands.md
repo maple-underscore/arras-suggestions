@@ -140,6 +140,16 @@
 
   Has the following subcommands:
 
+  - `spawnregion` - Used to set boss spawn region
+
+    Takes in the following arguments:
+   
+    - `corner1` - A tuple defining one corner of the spawn region
+    - `corner2` - A tuple defining the second corner of the spawn region
+   
+    Example: `$boss spawnregion (10, 10) (-10, -10)` sets the spawn region
+    to a `20`x`20` unit square around center of the arena
+    
   - `interval` - Used to set boss spawn interval
  
     Takes the following arguments:
@@ -148,6 +158,9 @@
     - `maximumTime` - Maximum time between boss spawns
 
     Using only one argument sets the boss time to exactly that argument. Otherwise, the boss time is randomized between the set values to the nearest millisecond.
+
+    Using `$boss interval 0` sets it to spawn after the last spawned boss dies.
+    Using `$boss interval 0+{time}` sets it to spawn {time} after the last spawned boss dies.
 
     Optional time extensions (default is in seconds): [t, ms, s, m, h] where t is ticks.
 
