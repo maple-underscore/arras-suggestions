@@ -58,6 +58,12 @@
 
     - `message` - A string containing the message content
    
+    `message` may contain nested commands
+
+    Example: `$arena broadcast "All player IDs: $get id *|"`
+
+    You may use `\` to escape commands (e.g. `$arena broadcast "How to get all player IDs: \$get id *|"`)
+   
     Example: `$arena broadcast "Test message here"`
  
   - `spawnpoint` - Sets spawnpoint
